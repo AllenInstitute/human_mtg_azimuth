@@ -1,5 +1,5 @@
 {
-  "Azimuth.app.reference": "/home/rohan/Local/datasets/human_mtg/ref_proc/",
+  "Azimuth.app.reference": "/home/rohan/Local/datasets/human_mtg/ref_proc_color/",
   "Azimuth.app.demodataset": "/home/rohan/Local/datasets/human_mtg/example_Seurat_object_H21.33.019.RDS",
   "Azimuth.app.max_cells": 100000,
   "Azimuth.app.default_gene": "PVALB",

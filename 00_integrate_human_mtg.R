@@ -16,8 +16,7 @@ gc()
 donor_labels <- names(ob.list)
 for (label in donor_labels) {
     path <-
-        paste(c(
-            "/home/rohan/Local/datasets/human_mtg/donor_",
+        paste(c(data_path, "donor_",
             gsub("\\.", "-", label),
             ".RDS"
         ),
