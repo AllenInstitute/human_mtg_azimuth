@@ -32,7 +32,7 @@ Building the reference and evaluating mapping results (Rohan Gala):
  └── 08_container_benchmark.ipynb        #(local) Assess compute/ memory/network footprint intended use case
 ```
 
-Mapping results are available at for post-hoc investigation:
+Mapping results made available for post-hoc investigation:
 ```bash
 /allen/programs/celltypes/workgroups/mousecelltypes/Rohan/dat/proc/human_mtg_azimuth_eval/
 ├── donorwise_cluster_metrics.csv  # - precision, recall, f1, support for each donor
@@ -50,6 +50,6 @@ Start docker with the correct config and reference files:
 docker run -it -p 8989:3838 -v /home/rohan/Local/datasets/human_mtg/ref_proc/:/reference_data/:ro azimuth R -e "Azimuth::AzimuthApp(config = '/reference_data/config.json')"
 ```
 
-### Deploying azimuth instance
+### Deploying azimuth instance online
 
 See notes in `09_deploy_remote.md`.
