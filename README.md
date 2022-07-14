@@ -50,6 +50,8 @@ Start docker with the correct config and reference files:
 docker run -it -p 8989:3838 -v /home/rohan/Local/datasets/human_mtg/ref_proc/:/reference_data/:ro azimuth R -e "Azimuth::AzimuthApp(config = '/reference_data/config.json')"
 ```
 
+An example `config.json` is included here.
+
 ### Deploying azimuth instance online
 
 See notes in `09_deploy_remote.md`.
