@@ -1,0 +1,43 @@
+# Shinyproxy uses this file to launch the correct docker container for each app listed on the landing page
+proxy:
+  title: SEA-AD data mapping with Azimuth
+  logo-url: 
+  landing-page: /
+  favicon-path: favicon.ico
+  heartbeat-rate: 10000
+  heartbeat-timeout: 60000
+  port: 8080
+  authentication: none
+  admin-groups: admins
+  # Example: 'simple' authentication configuration
+  users:
+  - name: rohan
+    password: seaad_droplet
+    groups: admins
+  # Docker configuration
+  docker:
+    cert-path: /home/none
+    url: http://localhost:2375
+    port-range-start: 20000
+  # Applications
+  specs:
+  - id: human_mtg
+    display-name: Human MTG
+    description: Azimuth application to map your scRNA-seq data to the Human MTG dataset
+    container-cmd: ["R", "-e", "Azimuth::AzimuthApp(config = '/reference_data/config.json')"]
+    container-image: azimuth
+    container-volumes: ["/root/mtg_ref:/reference_data:ro"]
+    access-groups: [admins, users]
+    port: 3838
+  - id: brain_region_X
+    display-name: Brain region X
+    description: Place-holder for adding new datasets at a later date. Points to Human MTG dataset app for now.
+    container-cmd: ["R", "-e", "Azimuth::AzimuthApp(config = '/reference_data/config.json')"]
+    container-image: azimuth
+    container-volumes: ["/root/mtg_ref:/reference_data:ro"]
+    access-groups: [admins, users]
+    port: 3838
+
+logging:
+  file:
+    name: /etc/shinyproxy/logs/shinyproxy.log
