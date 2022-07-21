@@ -32,4 +32,9 @@ docker build -t azimuth .
 sudo service shinyproxy restart
 ```
 
+#### 5. enable large file uploads on the webserver
+Set `client_max_body_size` to a large value (e.g. `600M`) in `/etc/nginx/sites-enabled/default` (See [this issue](https://github.com/analythium/shinyproxy-1-click/issues/7))
+
+---
+
 At this point, visiting the IP address of the droplet should allow the user to interact with the launch one of the apps specified within `application.yml`.
